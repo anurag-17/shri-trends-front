@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+.custom-input{
+  @apply py-2 px-4 rounded  w-full placeholder:text-[#00000080] placeholder:text-[12px] text-[14px] text-[black] border hover:border-[#00000080];
+}
+.login-input {
+  @apply py-2 px-4 rounded  w-full placeholder:text-[#00000080] placeholder:text-[12px] text-[14px] text-[black] border border-[#00000080] hover:border-[#f3f3f3] focus-visible:border-[#f3f3f3] ;
+}
+
+.login-input-label{
+  @apply text-[#1f2432]  text-[14px];
+}
+.custom-radio{
+  @apply cursor-pointer select-none rounded-[20px] py-[7px] text-center peer-checked:bg-[#000c] peer-checked:text-[white] text-[14px] font-medium w-[90px] px-1 max-w-[90px] flex flex-col justify-center items-center capitalize border border-[#000c]
+}
+/* .sidemenu_btn{
+  @apply px-4 py-3 mx-5 rounded-md  flex gap-x-3 items-center cursor-pointer  transition-colors font-semibold hover:transition-all ease-in delay-100 duration-300  text-[#f3f3f3] hover:bg-menu_secondary border border-[transparent] hover:border-[#f3f3f35e] hover:text-[white] 
+} */
+.disable_input{
+  @apply bg-[#d2d2d259] border border-[transparent] hover:border-none
+}
+
+.login-btn{
+  background: linear-gradient(54deg, #383260, #d3d0e7)
+}
+/* ----------------   dealer new css -------------- */
+
+.regular-16 {
+  @apply xl:text-[16px] text-[15px] font-[400];
+}
+
+.log_input-label {
+  @apply text-[#262628] font-[400] text-[14px] capitalize;
+}
+
+.log_input{
+  @apply px-4 py-2 2xl:h-[48px] h-[50px] border border-[#f3f3f3] bg-white text-[#262628] text-[15px] font-[400px] leading-normal focus-visible:outline-none placeholder:text-[14px] placeholder:text-[#262628] rounded-[10px]; 
+}
+.sign_input {
+  @apply border border-[#f3f3f3] bg-white text-[#262628] text-[15px] font-[400px] leading-normal focus-visible:outline-none placeholder:text-[14px] placeholder:text-[#262628] rounded-[6px] h-[42px]; 
+}
+}
+
+.log-btn {
+  background: linear-gradient(54deg, #356774, #6a8c94d1);
+  transition: all 0.3s ease, color 0.3s ease;
+}
+.log-btn:hover{
+  background: linear-gradient(54deg, #6a8c94d1, #356774);
+}
+
+@media (max-width:768px) {
+  .inputDiv{
+      width: 100%;
+      height: fit-content !important;
+  }
+  .inputDiv input{
+      width: 100%;
+      height: fit-content !important;
+  }
+}
+
+.custom_input {
+  @apply rounded border border-gray-300 bg-gray-50 text-gray-500 focus:bg-white dark:border dark:border-gray-600  focus:outline-none relative w-10/12  lg:w-8/12 2xl:text-sm 2xl:m-10 2xl:px-3 2xl:py-2 2xl:h-[50px]
+            xl:text-base xl:m-5 xl:px-3 xl:py-1 xl:h-[40px]
+            lg:text-sm lg:m-5 lg:px-2 lg:py-1 lg:h-[35px]
+            md:text-sm md:m-4 md:px-3 md:py-2 md:h-[30px]
+            sm:text-sm sm:m-3 sm:px-2 sm:py-1 sm:h-[30px]
+            text-sm m-2 px-2 py-1 h-[20px];
+}
+.custom_inputt {
+  @apply rounded relative border border-gray-300 bg-gray-50 text-gray-500 focus:bg-white dark:border dark:border-gray-600  focus:outline-none  w-10/12  lg:w-10/12 2xl:text-sm 2xl:m-10 2xl:px-3 2xl:py-2 2xl:h-[50px]
+         xl:m-5 xl:px-3 xl:py-1 xl:h-[40px]
+             lg:m-5 lg:px-2 lg:py-1 lg:h-[35px]
+            md:m-4 md:px-3 md:py-2 md:h-[30px]
+          sm:m-3 sm:px-2 sm:py-1 sm:h-[30px]
+         m-2 px-2 py-1 h-[25px] text-[14px];
+}
+
+.custom_btn {
+  @apply border hover:bg-blue-400 text-white rounded-md lg:rounded-lg bg-blue-600  2xl:text-[20px] 2xl:p-2 2xl:m-10 2xl:mt-0
+              xl:text-[14px] xl:py-2 xl:px-4  xl:m-5 xl:mt-0
+              lg:text-[12px] lg:py-2 lg:px-3 lg:m-5 lg:mt-0
+              md:text-[12px] md:py-1 md:px-2 md:m-4 md:mt-0
+              sm:text-[11px] sm:py-1  sm:px-2 sm:m-3 sm:mt-0
+              text-[9px] py-[3px] px-2 m-2 mt-0;
+}
+.custom_btn_d {
+  @apply border 2xl:text-[20px] 2xl:p-2 2xl:m-0 2xl:mt-0
+              xl:text-[14px] xl:py-2 xl:px-4  xl:mb-2 xl:mt-0
+              lg:text-[12px] lg:py-2 lg:px-3 lg:mb-2 lg:mt-0
+              md:text-[12px] md:py-1 md:px-2 md:mb-2 md:mt-0
+              sm:text-[12px] sm:py-1  sm:px-2 sm:m-0 sm:mt-0
+              text-[10px] py-[3px] px-2 m-0 mt-0;
+}
+.custom_select {
+  @apply rounded border border-gray-300 bg-gray-50 text-gray-500 focus:bg-white dark:border dark:border-gray-600 focus:outline-none  
+    2xl:px-3 2xl:py-2 2xl:h-[35px] 2xl:w-36 
+  xl:px-3 xl:py-0  xl:w-28 
+  lg:px-2 lg:py-1  w-24
+  md:px-0 md:py-0 md:h-[25px] 
+    sm:px-2 sm:py-0 
+      px-2 pb-0 h-[24px] ;
+}
+.custom_input_label {
+  @apply absolute bg-white z-20 text-gray-800
+  2xl:text-[18px] 2xl:mt-6 2xl:ml-14
+  xl:text-[14px] xl:mt-2 xl:ml-8
+  lg:text-[12px] lg:mt-[10px] lg:ml-[26px]
+  md:text-[10px] md:mt-2 md:ml-6
+  sm:text-[10px] sm:mt-1 sm:ml-5
+  text-[10px] ml-4;
+}
+.btn_cls{
+  @apply px-3 py-2 bg-[#313A46] text-white rounded-md hover:bg-gray-600
+}
+
+
+/* Sidebar styles */
+.sidebar-menu {
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.sidebar-menu.active {
+  transform: translateX(0);
+}
+
+/* Main content styles */
+.main {
+  transition: margin-left 0.3s ease;
+}
+
+.main.active {
+  margin-left: 0;
+}
