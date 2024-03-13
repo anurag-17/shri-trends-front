@@ -57,6 +57,51 @@ const comisionData=[
     name:"Devesh",
     com:39000
   },
+];
+
+const comisionRate=[
+  {
+   percnt:"4.00%" ,
+   ratio:4.8,
+   product:50,
+   comision:2000,
+   sale:50000,
+  },
+  {
+    percnt:"6.00%" ,
+    ratio:7.2,
+    product:100,
+    comision:6000,
+    sale:100000,
+   },
+   {
+    percnt:"8.00%" ,
+    ratio:9.6,
+    product:150,
+    comision:12000,
+    sale:150000,
+   },
+   {
+    percnt:"10.00%" ,
+    ratio:12,
+    product:200,
+    comision:20000,
+    sale:200000,
+   },
+   {
+    percnt:"12.00%" ,
+    ratio:14.4,
+    product:250,
+    comision:3000,
+    sale:250000,
+   },
+   {
+    percnt:"14.00%" ,
+    ratio:16.8,
+    product:300,
+    comision:42000,
+    sale:300000,
+   },
 ]
 
 
@@ -66,19 +111,66 @@ const comisionData=[
         <div className="container mx-auto px-[70px]">
      
 
-          <div className="bg-[#f3f3f3]   py-8 px-4">
-            
-              <h1 className="text-2xl font-bold text-gray-800">Comission</h1>
-            
-          
-            </div>
-          
+          <div className="bg-[#f3f3f3] rounded-lg py-2 px-4">
+              <h1 className="text-2xl rounded font-bold text-gray-800">Comission</h1>
+            </div>     
+
+            <div className="bg-neutral-200 mt-4 p-4">
+            <div>Our Comission Rates List</div>
             <div className="">
-              <table className=" table-auto mt-[20px] w-full ">
+              <table className="border  rounded table-auto mt-[20px] w-full ">
                 <thead className="">
                   <tr className=" ">
                     {/* {headItems.map((items, inx) => ( */}
                       <th className="py-3 px- text-left bg-white border-b ">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Sno</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Percentage (%)</p>
+                      </th>
+                     
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Ratio</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Product</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Ratio</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Sale</p>
+                      </th>
+                    
+                  </tr>
+                </thead>
+  
+                <tbody>
+                  {  
+                    comisionRate?.map((items, index) => (
+                      <tr key={index} className="border-b bg-white">
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-2">{index + 1 + "."}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.percnt}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.ratio}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.product}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.comision}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.sale}</td>
+                        
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+          </div>
+
+            </div>
+          
+            <div className="">
+              <table className="border  rounded table-auto mt-[20px] w-full ">
+                <thead className="">
+                  <tr className=" ">
+                    {/* {headItems.map((items, inx) => ( */}
+                      <th className="py-3 px-4 text-left bg-white border-b ">
                         <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Sno</p>
                       </th>
                       <th className="py-3 px-5 text-left bg-white border-b">
@@ -97,7 +189,7 @@ const comisionData=[
                   {  
                     comisionData?.map((items, index) => (
                       <tr key={index} className="border-b bg-white">
-                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-2">{index + 1}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{index + 1 + "."}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.name}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.com}</td>
                         
@@ -106,7 +198,6 @@ const comisionData=[
                   }
                 </tbody>
               </table>
-
           </div>
          
 

@@ -112,10 +112,10 @@ const Dealer = () => {
     </div>
 
     <div
-      className={` mx-5 rounded text-center cursor-pointer my-3 flex items-center transition-colors dash-menu gap-x-3 font-semibold  text-[16px] hover:text-primary  }`}
+      className={` mx-5 rounded text-center cursor-pointer my-3 flex items-center transition-colors dash-menu gap-x-3 font-semibold  text-[16px]   }`}
       onClick={handleSignout}
     >
-      <Image className="w-6" src={signout} alt="signout" />
+      <Image className="w-6" src={signout} alt="signout"/>
       <div>
         <p>Sign Out</p>
       </div>

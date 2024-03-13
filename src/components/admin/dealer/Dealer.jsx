@@ -61,11 +61,11 @@ const Dealer = () => {
             setLoader(false);
             setAllData(response?.data);
             // setReferId(response?.data?.users?.referredBy)
-            const referredById = response.data?.referredBy;
-            if (referredById) {
-              getRefData(referredById);
+            // const referredById = response.data?.referredBy;
+            // if (referredById) {
+            //   getRefData(referredById);
 
-            }
+            // }
           } else {
             setLoader(false);
             return;
@@ -350,7 +350,7 @@ const getRefData = async () => {
                       <tr key={index} className="border-b">
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-2">{index + 1}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.firstname}</td>
-                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{referalData?.firstname}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.referredBy?.firstname}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.email}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.mobile} </td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.companyName} </td>

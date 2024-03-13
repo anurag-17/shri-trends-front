@@ -189,7 +189,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="mt-4">
+          <div className="my-4">
             <p className="font-semibold text-[25px] 2xl:text-[30px] py-5 ">
               Last 30 Day&rsquo;s Best Selling
             </p>
@@ -220,7 +220,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <p className="font-semibold text-[25px] 2xl:text-[30px] py-5 ">
               Vendor Orders
             </p>
@@ -245,7 +245,7 @@ const Dashboard = () => {
                         </td>
                         <td className="border p-2 text-center">
                           <button
-                            // onClick={() => onActionClick(order.id)}
+                          
                             className="bg-blue-500 text-white px-4 py-2 rounded-lg"
                           >
                             View Orders
@@ -257,7 +257,7 @@ const Dashboard = () => {
                 </table>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

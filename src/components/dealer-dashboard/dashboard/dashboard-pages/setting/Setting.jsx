@@ -21,7 +21,7 @@ const Setting = () => {
          Profile
         </div>
         <div className="collapse-content">
-        <div className="p-4 sm:py-6 sm:px-10 shadow rounded max-w-[490px]  my-4">
+        <div className="p-4 sm:py-6 sm:px-10 shadow rounded max-w-[490px]  my-4 bg-white">
          
 
           <div className="flex gap-5 flex-col justify-center text-[16px]  ">
