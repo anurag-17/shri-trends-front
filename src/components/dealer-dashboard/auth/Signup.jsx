@@ -209,7 +209,7 @@ const Signup = () => {
                       <input
                         type="text"
                         name="referredBy"
-                        placeholder="Reffered By"
+                        placeholder="Referred By"
                         className="sign_input w-full custom-input"
                         onChange={InputHandler}
                         required

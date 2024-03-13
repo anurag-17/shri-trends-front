@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "next dev",
     "start": "cross-env NODE_ENV=production node server.js",
     "build": "next build"
   },
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
+    "daisyui": "^4.7.3",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",

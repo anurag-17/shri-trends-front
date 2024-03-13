@@ -2,58 +2,118 @@ import Image from "next/image";
 import React from "react";
 
 const Reviews = () => {
-  const dummyProducts = [
-    {
-      id: "",
-    },
-    {
-      id: "",
-    },
-    {
-      id: "",
-    },
-    {
-      id: "",
-    },
-    {
-      id: "",
-    }
-  ];
+  // const dummyProducts = [
+  //   {
+  //     id: "",
+  //   },
+  //   {
+  //     id: "",
+  //   },
+  //   {
+  //     id: "",
+  //   },
+  //   {
+  //     id: "",
+  //   },
+  //   {
+  //     id: "",
+  //   }
+  // ];
+
+const comisionData=[
+  {
+    name:"Aman",
+    com:3000
+  },
+  {
+    name:"Kuldeep",
+    com:5000
+  },
+  {
+    name:"Rames",
+    com:10000
+  },
+  {
+    name:"Krishna",
+    com:7000
+  },
+  {
+    name:"Kuldeep",
+    com:1000
+  },
+  {
+    name:"Rakesh",
+    com:20000
+  },
+  {
+    name:"Hitesh",
+    com:30000
+  },
+  {
+    name:"Akash",
+    com:4000
+  },
+  {
+    name:"Devesh",
+    com:39000
+  },
+]
+
+
   return (
     <>
       <section>
         <div className="container mx-auto px-[70px]">
-          {/* <div
-            className="relative h-56 rounded-b-lg bg-cover bg-center bg-no-repeat shadow-lg"
-          >
-            <div className="px-4 pt-8 pb-10">
-              <div className="absolute inset-x-0 -bottom-10 mx-auto w-36 rounded-full border-8 border-white shadow-lg">
-                <span className="absolute right-0 m-3 h-3 w-3 rounded-full bg-green-500 ring-2 ring-green-300 ring-offset-2"></span>
-                <img
-                  className="mx-auto h-auto w-full rounded-full"
-                  src="/images/n2yIu0Buhpft9wZ6tROzn.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div> */}
+     
 
-          <div className="bg-[#f3f3f3] flex flex-col items-start justify-center space-y-4 py-8 px-4 sm:flex-row sm:space-y-0 md:justify-between lg:px-0">
-            <div className="max-w-lg">
-              <h1 className="text-2xl font-bold text-gray-800">Recent reviws</h1>
-              {/* <p className="mt-2 text-gray-600">
-              Check the status of recent orders, manage returns, and discover similar products.
-              </p> */}
+          <div className="bg-[#f3f3f3]   py-8 px-4">
+            
+              <h1 className="text-2xl font-bold text-gray-800">Comission</h1>
+            
+          
             </div>
+          
             <div className="">
-              {/* <button className="flex whitespace-nowrap rounded-lg bg-pink-600 px-6 py-2 font-bold text-white transition hover:translate-y-1">
-                Chat with us
-              </button> */}
-            </div>
+              <table className=" table-auto mt-[20px] w-full ">
+                <thead className="">
+                  <tr className=" ">
+                    {/* {headItems.map((items, inx) => ( */}
+                      <th className="py-3 px- text-left bg-white border-b ">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Sno</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Name</p>
+                      </th>
+                     
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Comission</p>
+                      </th>
+                   
+                    {/* ))} */}
+                  </tr>
+                </thead>
+  
+                <tbody>
+                  {  
+                    comisionData?.map((items, index) => (
+                      <tr key={index} className="border-b bg-white">
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-2">{index + 1}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.name}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.com}</td>
+                        
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+
           </div>
+         
 
 
-          <div className="rounded-[10px] bg-white py-[20px]  flex justify-between items-start mt-[10px] px-6 overflow-x-scroll">
+
+
+          {/* <div className="rounded-[10px] bg-white py-[20px]  flex justify-between items-start mt-[10px] px-6 overflow-x-scroll">
                 <table className="w-full min-w-[640px] table-auto mt-[20px] ">
                   <thead className="">
                     <tr className=" ">
@@ -138,7 +198,7 @@ const Reviews = () => {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </div> */}
 
         
         </div>

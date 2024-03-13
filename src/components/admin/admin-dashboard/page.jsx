@@ -10,7 +10,7 @@ import webIcon from "../../../../public/admin/web-site.svg";
 import Users from "../../../../public/admin/users.svg";
 import conversation from "../../../../public/admin/conversation.svg";
 import contactIcon from "../../../../public/admin/contact-mail.svg";
-import CloseIcon from '../../svg/CloseIcon';
+import CloseIcon from '../../svg/CloseIcon';  
 import LogoutIcon from '../../svg/Logout';
 import signout from "../../../../public/admin/signout.svg";
 import Image from 'next/image';

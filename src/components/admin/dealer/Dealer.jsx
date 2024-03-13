@@ -16,16 +16,6 @@ import Image from "next/image";
 import EditDealer from "./editDealer";
 import PreviewDealer from "./previewDealer";
 
-export const headItems = [
-  "S. No.",
-  "Name",
-  "Email",
-  "Mobile number",
-  "Company name",
-  "GST no.",
-  "Address",
-  "Action",
-];
 
 const Dealer = () => {
 
@@ -39,16 +29,21 @@ const Dealer = () => {
     const [dialogMatch, setDialogMatch] = useState(false);
     const [dialogPreview,setDialogPreview]=useState(false)
     const [deleteId, setDeleteId] = useState("");
+    // const [referId,setReferId]=useState([]);
+    // console.log(referId,"lllk");
+    const [referalData,setReferalData]=useState("");
     const [editData, setEditData] = useState([]);
     const visiblePageCount = 10;
     const adminAuthToken = useSelector((state) => state.auth?.token);
-  
+ 
+    
+    // --------get All userData-----------
     useEffect(() => {
       getAllData(1);
     }, [isRefresh]);
   
     const getAllData = (pageNo) => {
-      setLoader(true)
+      setLoader(true);
       const options = {
         method: "GET",
         url: `https://shree-trends-backend.vercel.app/api/auth/all-users?page=${pageNo}&limit=${visiblePageCount}`,
@@ -57,24 +52,72 @@ const Dealer = () => {
           'Content-Type': 'application/json',
         },
       };
+    
       axios
         .request(options)
         .then((response) => {
-            console.log(response)
+          console.log(response);
           if (response.status === 200) {
-            setLoader(false)
+            setLoader(false);
             setAllData(response?.data);
-          }
-          else {
-            setLoader(false)
-            return
+            // setReferId(response?.data?.users?.referredBy)
+            const referredById = response.data?.referredBy;
+            if (referredById) {
+              getRefData(referredById);
+
+            }
+          } else {
+            setLoader(false);
+            return;
           }
         })
         .catch((error) => {
-          setLoader(false)
+          setLoader(false);
           console.error("Error:", error);
         });
     };
+
+
+    const refId = allData?.users?.map(user => user.referredBy);
+    console.log(refId, "refID");
+
+// ---------get by referal Id------------
+
+useEffect(() => {
+  getRefData();
+}, [isRefresh]);
+
+const getRefData = async () => {
+  setLoader(true);
+
+  try {
+    const options = {
+      method: "GET",
+      url: `https://shree-trends-backend.vercel.app/api/auth/getAdminReferralDetails/${refId}`,
+      headers: {
+        Authorization: adminAuthToken,
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const response = await axios.request(options);
+
+    if (response.status === 200) {
+      setLoader(false);
+      setReferalData(response.data?.admin);
+      console.log(response.data, "aaa");
+    } else {
+      setLoader(false);
+      return;
+    }
+  } catch (error) {
+    setLoader(false);
+    console.error("Error:", error);
+  }
+};
+
+
+
   
     // const handleDelete = (id) => {
     //   setUpdateId(id)
@@ -223,7 +266,8 @@ const Dealer = () => {
         });
     };
   
-  
+   
+    
     return (
       <>
   <ToastContainer/>
@@ -267,11 +311,35 @@ const Dealer = () => {
               <table className=" table-auto mt-[20px]  2xl:w-full">
                 <thead className="">
                   <tr className=" ">
-                    {headItems.map((items, inx) => (
-                      <th className="py-3 px-5 text-left bg-white border-b" key={inx}>
-                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap "> {items}</p>
+                    {/* {headItems.map((items, inx) => ( */}
+                      <th className="py-3 px- text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Sno</p>
                       </th>
-                    ))}
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Name</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Referred By</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Email</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Mobile No.</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Company Name</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">GST No.</p>
+                      </th>
+                      <th className="py-3 px-3 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Address</p>
+                      </th>
+                      <th className="py-3 px-5 text-left bg-white border-b">
+                        <p className="block text-[11px] font-medium uppercase text-[#72727b] whitespace-nowrap ">Action</p>
+                      </th>
+                   
                   </tr>
                 </thead>
   
@@ -282,6 +350,7 @@ const Dealer = () => {
                       <tr key={index} className="border-b">
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-2">{index + 1}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{items?.firstname}</td>
+                        <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5 capitalize">{referalData?.firstname}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.email}</td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.mobile} </td>
                         <td className="text-[12px] 2xl:text-[16px] font-[400] py-3 px-5">{items?.companyName} </td>
