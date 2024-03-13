@@ -18,6 +18,7 @@ const Wallet = () => {
                 <li className="hover:text-blue-500 cursor-pointer">Wallet Cashback</li>
                 <li className="hover:text-blue-500 cursor-pointer">Wallet Action</li>  
 
+
              </ul>
             </div>
           </div>
