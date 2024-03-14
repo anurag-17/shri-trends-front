@@ -11,6 +11,7 @@ import page from "../../public/admin/page.svg";
 import webIcon from "../../public/admin/setting.svg";
 import wallet from "../../public/admin/wallet.svg";
 import Wallet from "@/components/dealer-dashboard/dashboard/dashboard-pages/wallet/Wallet.";
+import ProductAdded from "@/components/dealer-dashboard/dashboard/dashboard-pages/productAdded/ProductAdded";
 
 export const sideMenus = [
     {
@@ -27,24 +28,30 @@ export const sideMenus = [
     },
     {
       id: 3,
+      label: "Product added",
+      component:<ProductAdded/>,
+      icon: page,
+    },
+    {
+      id: 4,
       label: "Total Sale",
       component: <Orders />,
       icon: page,
     },
     {
-      id: 4,
+      id: 5,
       label: "Commission",
       component: <Reviews />,
       icon: page,
     },
     {
-      id: 5,
+      id: 6,
       label: "Settings",
       component: <Setting />,
       icon: webIcon,
     },
     {
-      id: 6,
+      id: 7,
       label: "Wallet",
       component:<Wallet/> ,
       icon:wallet

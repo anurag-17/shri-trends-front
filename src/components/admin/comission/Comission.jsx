@@ -3,6 +3,7 @@ import Loader from "@/config/Loader";
 import React, { useState } from "react";
 
 const Comission = () => {
+
   let [isLoader, setLoader] = useState(false);
   const [searchText, setSearchText] = useState("");
 
@@ -79,7 +80,7 @@ const Comission = () => {
               Previous Months Comission
             </p>
             <div className="bg-white p-2 space-y-2">
-              <label for="start ">Start date:</label>
+              <label for="start ">By date:</label>
               <input
                 className="ml-2 border border-gray-500 rounded-sm"
                 type="date"

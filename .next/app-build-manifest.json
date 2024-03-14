@@ -1,9 +1,10 @@
 {
   "pages": {
-    "/page": [
+    "/dealer/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/dealer/page.css",
+      "static/chunks/app/dealer/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,23 +12,17 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/admin/page.css",
-      "static/chunks/app/admin/page.js"
-    ],
     "/admin/admin-dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/admin/admin-dashboard/page.css",
       "static/chunks/app/admin/admin-dashboard/page.js"
     ],
-    "/dealer/page": [
+    "/admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/dealer/page.css",
-      "static/chunks/app/dealer/page.js"
+      "static/css/app/admin/page.css",
+      "static/chunks/app/admin/page.js"
     ]
   }
 }

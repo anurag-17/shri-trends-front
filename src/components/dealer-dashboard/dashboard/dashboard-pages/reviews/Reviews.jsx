@@ -186,7 +186,28 @@ const comisionRate=[
               </div>
 
               <p className="font-bold my-4">Total Comission from all : ⟨₹⟩ 34300 </p>
+
               </div>
+
+              <div>
+            <p className="text-[20px] font-semibold mt-6  ">
+              Previous Months Comission
+            </p>
+            <div className="bg-white p-2 space-y-2 border my-3">
+              <label for="start ">By Date:</label>
+              <input
+                className="ml-2 border border-gray-500 rounded-sm"
+                type="date"
+            
+                name="trip-start"
+                value=""
+                min="2024-01-01"
+              />
+
+              <p>Total Comission from all Dealers and Sub-dealers :</p>
+              <p className="border border-gray-500 rounded-sm w-28">⟨₹⟩ 50000</p>
+            </div>
+          </div>
             </div>
           
             {/* <div className="">
