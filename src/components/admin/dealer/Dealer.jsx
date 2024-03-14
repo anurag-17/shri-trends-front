@@ -21,7 +21,7 @@ const Dealer = () => {
 
     let [allData, setAllData] = useState([])
  
-    let [isLoader, setLoader] = useState(false)
+    let [isLoader, setLoader] = useState(false);
     const [isDrawerOpenO, setIsDrawerOpenO] = useState(false);
     const [isDrawerOpen1, setIsDrawerOpen1] = useState(false);
     const [isRefresh, setRefresh] = useState(false);
@@ -60,12 +60,6 @@ const Dealer = () => {
           if (response.status === 200) {
             setLoader(false);
             setAllData(response?.data);
-            // setReferId(response?.data?.users?.referredBy)
-            // const referredById = response.data?.referredBy;
-            // if (referredById) {
-            //   getRefData(referredById);
-
-            // }
           } else {
             setLoader(false);
             return;
@@ -116,15 +110,6 @@ const getRefData = async () => {
   }
 };
 
-
-
-  
-    // const handleDelete = (id) => {
-    //   setUpdateId(id)
-    //   setOpenDelete(true)
-    // }
-  
-    
   
     const refreshdata = () => {
       setRefresh(!isRefresh)

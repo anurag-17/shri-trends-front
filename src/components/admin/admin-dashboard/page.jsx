@@ -6,7 +6,7 @@ import { useDispatch,useSelector } from "react-redux";
 import HomeIcon from "../../../../public/admin/home.svg";
 import PageIcon from "../../../../public/admin/page.svg";
 import webIcon from "../../../../public/admin/web-site.svg";
-
+import comsion from "../../../../public/admin/commission.svg"
 import Users from "../../../../public/admin/users.svg";
 import conversation from "../../../../public/admin/conversation.svg";
 import contactIcon from "../../../../public/admin/contact-mail.svg";
@@ -31,6 +31,7 @@ import { removeToken,rem_AdDetails } from "@/redux/adminSlice/authSlice";
 import Products from "../product/products";
 import Dealer from "../dealer/Dealer";
 import protectedRoute from "@/config/protectedRoute";
+import Comission from "../comission/Comission";
 
 
 const SideMenu = () => {
@@ -66,6 +67,13 @@ const SideMenu = () => {
     },
     {
       id: 4,
+      label: "Comission",
+      component:<Comission/> ,
+      icon: comsion,
+    },
+
+    {
+      id: 5,
       label: "Products",
       component:<Products/> ,
       icon: webIcon,

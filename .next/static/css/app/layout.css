@@ -952,6 +952,29 @@ html {
   --tw-content: attr(aria-label);
   content: var(--tw-content);
 }
+.carousel {
+  display: inline-flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-item {
+  box-sizing: content-box;
+  display: flex;
+  flex: none;
+  scroll-snap-align: start;
+}
+.carousel-start .carousel-item {
+  scroll-snap-align: start;
+}
+.carousel-center .carousel-item {
+  scroll-snap-align: center;
+}
+.carousel-end .carousel-item {
+  scroll-snap-align: end;
+}
 .checkbox {
   flex-shrink: 0;
   --chkbg: var(--fallback-bc,oklch(var(--bc)/1));
@@ -1453,6 +1476,9 @@ input.tab:checked + .tab-content,
   100% {
     transform: scale(1);
   }
+}
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 .checkbox:focus {
   box-shadow: none;
@@ -2573,6 +2599,9 @@ details.collapse summary::-webkit-details-marker {
 .mt-px {
   margin-top: 1px;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -2762,6 +2791,15 @@ details.collapse summary::-webkit-details-marker {
 .w-full {
   width: 100%;
 }
+.w-72 {
+  width: 18rem;
+}
+.w-20 {
+  width: 5rem;
+}
+.w-28 {
+  width: 7rem;
+}
 .min-w-\[640px\] {
   min-width: 640px;
 }
@@ -2947,6 +2985,11 @@ details.collapse summary::-webkit-details-marker {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -3082,6 +3125,10 @@ details.collapse summary::-webkit-details-marker {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 .border-b-\[\#f3f3f3\] {
   --tw-border-opacity: 1;
@@ -3381,6 +3428,9 @@ details.collapse summary::-webkit-details-marker {
 .pt-\[60px\] {
   padding-top: 60px;
 }
+.pl-2 {
+  padding-left: 0.5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -3593,6 +3643,9 @@ details.collapse summary::-webkit-details-marker {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\] {
+  color: ;
 }
 .underline {
   text-decoration-line: underline;

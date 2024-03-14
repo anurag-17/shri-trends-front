@@ -123,7 +123,7 @@ const comisionRate=[
                   <tr className=" ">
                     {/* {headItems.map((items, inx) => ( */}
                       <th className="py-3 px- text-left bg-white border-b ">
-                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">Sno</p>
+                        <p className=" text-[11px] font-medium uppercase text-[#72727b]">S.No.</p>
                       </th>
                       <th className="py-3 px-5 text-left bg-white border-b">
                         <p className=" text-[11px] font-medium uppercase text-[#72727b]">Percentage (%)</p>
@@ -164,12 +164,36 @@ const comisionRate=[
           </div>
 
             </div>
+
+            <div>
+             
+
+            </div>
+
+            <div className="mt-4">
+              <p className="text-[20px] font-semibold">One Month Comission</p>
+              <div className="bg-white my-4 border pl-2 rounded-md">
+              <p className="font-semibold my-4 text-[20px]">Your Comission</p>
+
+              <p className="">Orders Upto 50 Products comission :  ⟨₹⟩<span className="font-semibold">2800 </span></p>
+              <p>Orders from 51-100 products comission : ⟨₹⟩ <span className="font-semibold">6500</span></p>
+              <p>Orders from 101 upto unlimited 10% of products comission : ⟨₹⟩ <span className="font-semibold">9000</span></p>
+           
+
+              <div className="my-4">
+                <p className="font-semibold">Comission from Subdealers sale : ⟨₹⟩ <span className="font-semibold">16000</span></p>
+                
+              </div>
+
+              <p className="font-bold my-4">Total Comission from all : ⟨₹⟩ 34300 </p>
+              </div>
+            </div>
           
-            <div className="">
+            {/* <div className="">
               <table className="border  rounded table-auto mt-[20px] w-full ">
                 <thead className="">
                   <tr className=" ">
-                    {/* {headItems.map((items, inx) => ( */}
+                  
                       <th className="py-3 px-4 text-left bg-white border-b ">
                         <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Sno</p>
                       </th>
@@ -181,7 +205,7 @@ const comisionRate=[
                         <p className=" text-[11px] font-medium uppercase text-[#72727b]  ">Comission</p>
                       </th>
                    
-                    {/* ))} */}
+                
                   </tr>
                 </thead>
   
@@ -198,7 +222,7 @@ const comisionRate=[
                   }
                 </tbody>
               </table>
-          </div>
+          </div> */}
          
 
 
