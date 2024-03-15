@@ -171,16 +171,16 @@ const Products = () => {
               <tbody>
                 {getProduct.map((product, index) => (
                   <tr key={index} className="border-b">
-                    <td className="text-[14px] font-[400] py-3 px-5">
+                    <td className="text-[13px] font-[400] py-3 px-5">
                       {index + 1}
                     </td>
-                    <td className="text-[14px] font-[400] py-3 px-5">
+                    <td className="text-[13px] font-[400] py-3 px-5">
                       {product.title}
                     </td>
-                    <td className="text-[14px] font-[400] py-3 px-5 capitalize">
+                    <td className="text-[13px] font-[400] py-3 px-5 capitalize">
                       {product.description}
                     </td>
-                    <td className="text-[14px] font-[400] py-3 px-5">
+                    <td className="text-[13px] font-[400] py-3 px-5">
                       {/* {product.images.length > 0 && (
         <Image
           className="w-16 flex mx-auto"
@@ -189,10 +189,10 @@ const Products = () => {
         />
       )} */}
                     </td>
-                    <td className="text-[14px] font-[400] py-3 px-5">
+                    <td className="text-[13px] font-[400] py-3 px-5">
                       {product.price}
                     </td>
-                    <td className="text-[14px] font-[400] py-3 px-5 capitalize">
+                    <td className="text-[13px] font-[400] py-3 px-5 capitalize">
                       {/* Displaying size and quantity of each stock */}
                       {product.stocks.map((stock, stockIndex) => (
                         <div key={stockIndex}>
@@ -201,7 +201,7 @@ const Products = () => {
                       ))}
                     </td>
 
-                    <td className="text-[14px] font-[400] py-3 px-5">
+                    <td className="text-[13px] font-[400] py-3 px-5">
                       <div className="flex flex-col md:flex-row items-center gap-x-5">
                         <button
                           className="btn_cls"

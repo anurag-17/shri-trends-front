@@ -1,16 +1,21 @@
 {
   "pages": {
-    "/dealer/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/dealer/page.css",
-      "static/chunks/app/dealer/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/dealer/signup/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dealer/signup/page.css",
+      "static/chunks/app/dealer/signup/page.js"
     ],
     "/admin/admin-dashboard/page": [
       "static/chunks/webpack.js",
@@ -23,6 +28,17 @@
       "static/chunks/main-app.js",
       "static/css/app/admin/page.css",
       "static/chunks/app/admin/page.js"
+    ],
+    "/dealer/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dealer/page.css",
+      "static/chunks/app/dealer/page.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }

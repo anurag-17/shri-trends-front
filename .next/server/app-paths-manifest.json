@@ -1,5 +1,8 @@
 {
-  "/dealer/page": "app/dealer/page.js",
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js",
   "/admin/admin-dashboard/page": "app/admin/admin-dashboard/page.js",
-  "/admin/page": "app/admin/page.js"
+  "/admin/page": "app/admin/page.js",
+  "/dealer/page": "app/dealer/page.js",
+  "/dealer/signup/page": "app/dealer/signup/page.js"
 }

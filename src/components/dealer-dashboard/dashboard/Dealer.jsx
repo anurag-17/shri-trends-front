@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
-import signout from "../../../../public/admin/signout.svg"
+import signout from "../../../../public/admin/signout.svg";
 
 import CloseIcon from "@/components/svg/CloseIcon";
 // import { removeToken, rem_DealerDetails } from "@/redux/adminSlice/authSlice";
@@ -86,8 +86,9 @@ const Dealer = () => {
   );
 
   return (
-    <section className="">
+    <>
       <ToastContainer />
+    <section className="">
 
       <div className=" ">
       <div
@@ -223,6 +224,7 @@ const Dealer = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
