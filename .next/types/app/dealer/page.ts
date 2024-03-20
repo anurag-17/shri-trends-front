@@ -1,4 +1,4 @@
-// File: /home/admin1/shishir/shri-trends-front/src/app/dealer/page.js
+// File: C:\Users\kanha\OneDrive\Desktop\Shri-trends\shri-trends-front\src\app\dealer\page.js
 import * as entry from '../../../../src/app/dealer/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
