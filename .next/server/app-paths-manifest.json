@@ -1,6 +1,7 @@
 {
   "/not-found": "app/not-found.js",
+  "/dealer/page": "app/dealer/page.js",
   "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/dealer/page": "app/dealer/page.js"
+  "/admin/page": "app/admin/page.js",
+  "/admin/admin-dashboard/page": "app/admin/admin-dashboard/page.js"
 }

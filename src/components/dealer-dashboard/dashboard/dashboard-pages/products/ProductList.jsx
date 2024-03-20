@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import icon1 from "../../../../../../public/admin/truck.svg";
 import icon2 from "../../../../../../public/admin/user1.svg";
 import icon3 from "../../../../../../public/admin/dollar.svg";
@@ -8,12 +8,18 @@ import axios from "axios";
 import Loader from "@/config/Loader";
 import cloth from "../../../../../../public/admin/ethnic-cloth.jpg";
 import { useSelector } from "react-redux";
+import { Transition, Dialog } from "@headlessui/react";
+import Productsingle from "./Productsingle";
+
 
 const ProductList = () => {
   let [isLoader, setLoader] = useState(false);
   const [allData, setAllData] = useState([]);
   const [getProduct, setGetProduct] = useState([]);
   const [isRefresh, setRefresh] = useState(false);
+  const [dialogMatch, setDialogMatch] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState(null);
+
   const adminAuthToken = useSelector((state) => state?.dealer?.token);
 
   //  --------get all Analytics Data------------
@@ -164,6 +170,7 @@ const ProductList = () => {
               </div>
               <p>{allData?.lastThirtyDaySales}</p>
             </div>
+            
             {/* ---------last 180  day sale--------- */}
             <div className="bg-white p-5 rounded-md shadow-lg">
               <div className="flex items-start justify-between ">
@@ -174,6 +181,7 @@ const ProductList = () => {
               </div>
               <p>{allData?.lastOneEightyDaySales}</p>
             </div>
+
             {/* ---------total products--------- */}
             <div className="bg-white p-5 rounded-md shadow-lg">
               <div className="flex items-start justify-between ">
@@ -184,6 +192,7 @@ const ProductList = () => {
               </div>
               <p>{allData?.totalProduct}</p>
             </div>
+
             {/* ---------avaliable stocks--------- */}
             <div className="bg-white p-5 rounded-md shadow-lg">
               <div className="flex items-start justify-between ">
@@ -194,6 +203,7 @@ const ProductList = () => {
               </div>
               <p>{allData?.availableStock}</p>
             </div>
+
             {/* ---------stock Value--------- */}
             <div className="bg-white p-5 rounded-md shadow-lg">
               <div className="flex items-start justify-between ">
@@ -223,7 +233,10 @@ const ProductList = () => {
             <div className="grid grid-cols-4 gap-4 rounded-sm">
               {getProduct.map((item) => (
                 <div
-                  key={item.id}
+                  key={item.id} onClick={() => {
+                    setDialogMatch(true);
+                    setSelectedItemId(item._id);
+                  }}
                   className="border p-4 bg-white flex flex-col items-center cursor-pointer"
                 >
                   <Image
@@ -256,6 +269,79 @@ const ProductList = () => {
               ))}
             </div>
           </div>
+
+
+
+
+
+          <Transition appear show={dialogMatch} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={() => {}}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className=" w-full max-w-[800px] transform overflow-hidden rounded-2xl bg-white py-10 px-12 text-left align-middle shadow-2xl transition-all">
+                {/* <div className=" mb-4 lg:mb-8">
+                    <div className="flex justify-end gap-x-5">
+                      <button
+                        className="w-full border border-1 rounded-md border-lightBlue-400 text-lightBlue-700 hover:bg-lightBlue-200 text-sm  px-2 py-3
+                              hover:border-none  border-sky-400 text-sky-700 hover:bg-sky-200 custom_btn_d "
+                        onClick={() => {
+                          setDialogMatch(false);
+                        }}
+                      >
+                        Close
+                      </button>
+
+                    </div>
+                  </div> */}
+
+                  <Productsingle  selectedItemId={selectedItemId}  setDialogMatch={setDialogMatch}/>
+
+                 
+
+                  {/* <div className="mt-3 flex justify-center gap-14">
+                    <button
+                      className="px-5 py-1 rounded-lg border border-[green] text-[green]"
+                      onClick={() => handleDelete(deleteId)}
+                    >
+                      Yes
+                    </button>
+                    <button
+                      className="px-5 py-1 rounded-lg border border-[red] text-[red]"
+                      onClick={() => {
+                        setDialogMatch(false);
+                      }}
+                    >
+                      No
+                    </button>
+                  </div> */}
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+
 
           {/* <main className="grid sm:grid-cols-2 gap-x-6 gap-y-10 px-2 pb-20 md:grid-cols-3 sm:px-8 lg:mt-8  xl:grid-cols-4 lg:gap-x-4 lg:px-0">
             {dummyProducts.map((items, index) => {
