@@ -9,7 +9,7 @@ import webIcon from "../../public/admin/setting.svg";
 import wallet from "../../public/admin/wallet.svg";
 import Wallet from "@/components/dealer-dashboard/dashboard/dashboard-pages/wallet/Wallet.";
 import ProductAdded from "@/components/dealer-dashboard/dashboard/dashboard-pages/productAdded/ProductAdded";
-import Wishlist from "@/components/dealer-dashboard/dashboard/dashboard-pages/wishlist/wishlist";
+import Wishlist from "@/components/dealer-dashboard/dashboard/dashboard-pages/wishlist/Wishlist"
 
 export const sideMenus = [
     {
