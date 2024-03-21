@@ -136,7 +136,7 @@ const Dealer = () => {
 
         <div className={`w-full md:ml-64 bg-gray-50 min-h-screen transition-all main ${isOpen ? 'md:w-[calc(100%-256px)] ' : 'active '}`}>
        
-        <div className="h-[50px] w-full bg-white px-[20px] flex justify-between items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30 mb-[20px] ">
+        <div className="h-[50px] w-full bg-white px-[20px] flex justify-between items-center shadow-md shadow-black/5 sticky top-0 left-0 z-9 mb-[20px] ">
         <div
           className="py-2 px-3 flex flex-col gap-[3px] cursor-pointer "
           onClick={toggleSidebar}

@@ -3,8 +3,8 @@ import axios from 'axios';
 import Loader from "@/config/Loader";
 import cloth from "../../../../../../public/admin/ethnic-cloth.jpg";
 import cross from "../../../../../../public/admin/cross.svg";
-
 import Image from "next/image";
+import Link from 'next/link';
 
 const Productsingle = ({ selectedItemId,setDialogMatch }) => {
     const [productData, setProductData] = useState(null);
@@ -76,12 +76,12 @@ const Productsingle = ({ selectedItemId,setDialogMatch }) => {
                   </div>
                   <div className="flex space-x-4 mb-6 text-sm font-medium">
                     <div className="flex-auto flex space-x-4">
-                      <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
-                        Buy now
+                
+                      <Link href="/dealer/add-cart">
+                      <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="button">
+                        Add to Cart
                       </button>
-                      <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
-                        Add to bag
-                      </button>
+                      </Link>
                     </div>
                     <button className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
                       <svg width="20" height="20" fill="currentColor" aria-hidden="true">
