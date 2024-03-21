@@ -23,7 +23,7 @@ function SidebarMenu() {
       </ul>
     </div>
     <main className="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
-    <div className="py-2 px-6 bg-white flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+    <div className="py-2 px-6 bg-white flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-9">
       <button type="button" className=" flex flex-col gap-[3px] cursor-pointer text-lg text-gray-600 sidebar-toggle">
       {/* <div
           className="py-2 px-3 flex flex-col gap-[3px] cursor-pointer "
@@ -76,4 +76,4 @@ function MenuItemWithDropdown({ icon, text, children }) {
   );
 }
 
-export default SidebarMenu;
+export default SidebarMenu; 
