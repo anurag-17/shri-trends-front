@@ -141,3 +141,18 @@
 .pointer{
   cursor: pointer;
 }
+span.count {
+  background: #ff4e4e;
+  line-height: 22px;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  right: -12px;
+  top: -10px;
+}

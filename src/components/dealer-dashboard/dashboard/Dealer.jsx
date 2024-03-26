@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import signout from "../../../../public/admin/signout.svg";
-
+import CartCounter from "./dashboard-pages/products/Cartcounter";
 import CloseIcon from "@/components/svg/CloseIcon";
 // import { removeToken, rem_DealerDetails } from "@/redux/adminSlice/authSlice";
 import {
@@ -18,6 +18,7 @@ import { sideMenus } from "@/config/data";
 import Image from "next/image";
 import Link from "next/link";
 import DealerProtectedRoute from "@/config/dealerProtectedRoute";
+import Cart from "./dashboard-pages/products/Cart";
 
 const Dealer = () => {
   const dispatch = useDispatch();
@@ -78,7 +79,7 @@ const Dealer = () => {
             className={`mx-4 py-[5px] flex gap-x-4 items-center cursor-pointer   font-semibold text-[16px] `}
             onClick={() => handleClick(item.id)}
           >
-            <Image src={item.icon} className=""/>
+            <Image src={item.icon} alt={item.icon } className=""/>
           </div>
         ))}
       </div>
@@ -104,7 +105,7 @@ const Dealer = () => {
                             ${item.id === ComponentId ? " border-b border-b-white" : " "}`}
             onClick={() => handleClick(item.id)}
           >
-            <Image src={item.icon} className="w-4"/>
+            <Image src={item.icon} alt={item.icon} className="w-4"/>
             {isOpen && <p className="capitalize whitespace-nowrap ">{item.label}</p>}
           </div>
         ))}
@@ -146,17 +147,36 @@ const Dealer = () => {
           <div className="bg-black h-[2px] w-[15px]"></div>
         </div>
 
+
+
         <div className="flex gap-5 items-center">
-          <div className="">
-            <Image
+
+        <div className="flex gap-5 ">
+
+<div className="relative">
+  <Link href="/dealer/add-cart">
+  <span className="count absolute"><CartCounter/></span>
+  <Image
+  src="/dealer/cart.svg"
+  alt="profile"
+  height={25}
+  width={25}
+/>
+</Link>
+</div>
+
+</div>
+
+       
+
+          <div className=" flex gap-4 ">
+          <Image
               src="/dealer/profile.svg"
               alt="profile"
               height={30}
               width={30}
             />
-          </div>
 
-          <div className="">
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="inline-flex w-full justify-center items-center">
@@ -224,6 +244,7 @@ const Dealer = () => {
         </div>
       </div>
     </section>
+
     </>
   );
 };

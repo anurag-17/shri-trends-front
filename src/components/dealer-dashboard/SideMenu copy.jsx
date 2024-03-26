@@ -6,7 +6,7 @@ function SidebarMenu() {
   <>
     <div className="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4 z-50 sidebar-menu transition-transform">
       <a href="#" className="flex items-center pb-4 border-b border-b-gray-800">
-        <img src="https://placehold.co/32x32" alt="" className="w-8 h-8 rounded object-cover" />
+        <img src="https://placehold.co/32x32" alt="img" className="w-8 h-8 rounded object-cover" />
         <span className="text-lg font-bold text-white ml-3">Logo</span>
       </a>
       <ul className="mt-4">
@@ -67,7 +67,7 @@ function MenuItemWithDropdown({ icon, text, children }) {
         {/* <img src={icon} alt="" className='h-[20px] w-[20px]' /> */}
         <span className="text-sm">{text}</span>
         {/* <i className="ri-arrow-right-s-line ml-auto"></i> */}
-        <img src={icon} alt="" className='h-[20px] w-[20px]  ml-auto' />
+        <img src={icon} alt="img" className='h-[20px] w-[20px]  ml-auto' />
       </a>
       <ul className="pl-7 mt-2 hidden">
         {children}
