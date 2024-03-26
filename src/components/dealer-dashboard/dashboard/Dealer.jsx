@@ -18,7 +18,7 @@ import { sideMenus } from "@/config/data";
 import Image from "next/image";
 import Link from "next/link";
 import DealerProtectedRoute from "@/config/dealerProtectedRoute";
-import Cart from "./dashboard-pages/products/Cart";
+
 
 const Dealer = () => {
   const dispatch = useDispatch();
